@@ -9,21 +9,19 @@ Using the machine learning skills we have acquired we are planning to run severa
 After we create our features and target, we split the data into training and testing groups.  
 
 As we see in the below image our classes of data are pretty significantly skewed in favor of Low Risk(good loans), with over 68K instances.  By comparison, we see only a few hundred instances of high risk(bad loans) within the data. 
-![Y_Value_Counts]()
+![Y_Value_Counts](https://github.com/Gkmb2390/Credit_Risk_Analysis/blob/main/Resources/Y%20Value%20Counts.png)
 
 # Naive Oversampling
 
 Our first model that we begin testing is the Naive Random Oversampling.  Using RandomOversampler from sklearn we resample the data X and y training data to have an equivalent number of high and low risk cases.
 
-![Y_resampled_Counts]()
-
 After reviewing the Accuracy score generated in our next step; we see that the test has a middling 62% accuracy.  Which would indicate that is capabale of detecting roughly 62% of the bad credit cases - which does not inspire a great deal of confidence. 
 
-![OversampleAccuracyResult]()
+![OversampleAccuracyResult](https://github.com/Gkmb2390/Credit_Risk_Analysis/blob/main/Resources/Naive%20accuracy.png)
 
 The confusion matrix results echo the expectation from our Accuracy Test.  Only 52 true positives indicates that we only caught 52 bad loan submissions. When reviewing the classification we find the precision for high risk campaigns to be only .01 which is indicates only a 1% chance of a bad loan.  
 
-![ConfusionMatrix]()
+![ConfusionMatrix](https://github.com/Gkmb2390/Credit_Risk_Analysis/blob/main/Resources/Naive%20confusion%20matrix.png)
 
 In summary, we see that this method of testing does an excellent job of identifying good loans, but a rather poor job of indicating the high risk or bad loans. 
 
@@ -31,10 +29,10 @@ In summary, we see that this method of testing does an excellent job of identify
 
 Following a similar process as above we find the results match a great deal to the Naive Oversampling model.  In the image below of the Confusion matrix and the classification report, they deliver virtually identical results as the Naive model.  
 
-![OversampleAccuracyResult]()
+![SMOTEAccuracyResult](https://github.com/Gkmb2390/Credit_Risk_Analysis/blob/main/Resources/SMOTE%20report.png)
 
 Ultimately this method of testing proves equally poor as the Naive method with a similar precision score and an equally high f1 score - indicating the signifcant imbalance between precision and sensitivy. 
-
+![SMOTEReport](https://github.com/Gkmb2390/Credit_Risk_Analysis/blob/main/Resources/SMOTE%20report.png)
 # Clustered Centroids
 
 After resampling the test and train sets using an undersampling method we find similar results as previous.  The Accuracy score here equates to roughly 53% initially inidicating that undersampling the data would provide a more inaccurate test. 
