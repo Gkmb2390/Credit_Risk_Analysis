@@ -78,7 +78,12 @@ The Adaboost model accuracy report indicates our highest chance of identifying t
 
 ![AdaBoost Accuracy]()
 
+Reviewing our confusion matrix and classification report results, we find very promising identifiers that the AdaBoost method would be most successful in predicting bad loans.  When reviewing the high risk line item, we see the highest precision of all the tests; however that equates to only 5%.  However, the recall rate being the highest amongst any tests indicates that the highest correct identifications amongst all the models. That in combonation with equally high scores amongst the low risk line item would; to me indicate the best option for success in this case. 
 
+![AdaBoost report]()
 
+# Conclusions
 
+While a majority of the testing methods do have merit and useful insight; I am excluding the undersampling methodology given its much poorer results. I would have to wholeheartedly recommend the AdaBoost Model.  
 
+The Oversampling methods provide better than middeling accuracy - they don't provide nearly as high recall rates.  Following those would be the Balanced Forest Model which saw signifcant improvements across the board for our high risk loan line item; however the AdaBoost provides just a slightly better result - and ultimately we are attempting to derive the best model for our needs. 
